@@ -6,14 +6,14 @@ main () {
 
     if [[ ${#DIRECTORY} -le ${#HOME} ]]; then
         echo "This isn't a workspace"
-        exit
+        return
     fi
 
     local DIRECTORY_START=${DIRECTORY:0:${#HOME}}
 
     if [[ ${DIRECTORY_START} != ${HOME} ]]; then
         echo "This isn't a workspace"
-        exit
+        return
     fi
 
     while true; do
